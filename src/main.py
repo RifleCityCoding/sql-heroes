@@ -83,7 +83,7 @@ from database.db_connection import execute_modify, execute_query
 def delete_hero(hero_name):
     check_hero_query = "SELECT id FROM heroes WHERE name = %s"
     hero_id = execute_query(check_hero_query, (hero_name,))
-
+      
     if hero_id:
         hero_id = hero_id[0][0]
         delete_abilities_query = "DELETE FROM abilities WHERE hero_id = %s"
